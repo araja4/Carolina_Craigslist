@@ -1,0 +1,98 @@
+body {
+    background: #ADD8E6;
+    font-size: 12pt;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+
+h1 {
+  text-align: center;
+}
+
+#logo {
+  height: 75px;
+}
+
+#nav {
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-bottom: 3px double #000;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+#home {
+  text-align: center;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 5px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#view {
+  color: #ffffff;
+}
+
+#view:hover {
+  text-align: center;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#create {
+  color: #ffffff;
+}
+
+#create:hover {
+  text-align: center;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#logout {
+  color: #ffffff;
+}
+
+#logout:hover {
+  text-align: center;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.navigation {
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+#welcome {
+  text-align: center;
+  padding-top: 25px;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+
+a>img {
+  height: 250px;
+  border: 2px solid #000;
+  border-radius: 25px;
+}
+
+h4 {
+  text-align: center;
+}
+
+#extraPageLength {
+  height: 300px;
+}

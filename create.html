@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a Post</title>
+    <link rel="stylesheet" type="text/css" href="create.css" />
+    <script src="http://wwwp.cs.unc.edu/Courses/comp426-f16/jquery-3.1.0.js"></script>
+    <script src="create.js"></script>
+    <script src="Post.js"></script>
+</head>
+
+<body>
+  <h1><img src="ram.gif" id="logo">Carolina Craigslist</h1>
+
+  <div id="nav">
+    <a class="navigation" href="home.html" id="home">Home</a>
+    <a class="navigation" href="viewbyusername.php" id="view">View Posts</a>
+    <a class="navigation" href="create.html" id="create">Create Posts</a>
+    <a class="navigation" href="firstpage.php" id="logout">Logout</a> <!-- end session and send to login page -->
+  </div>
+
+  <h2>Create a Post</h2>
+
+  <form id="new_todo_form">
+    Title: <input name = "title" type="text" id="title"></input>
+    <br>
+    <!--
+    Category:
+    <select name="category">
+      <option name="category" value="Furniture"> Furniture</option>
+      <option name="category" value="Clothing"> Clothing</option>
+      <option name="category" value="Sublease"> Sublease</option>
+      <option name="category" value="Tutoring"> Tutoring</option>
+      <option name="category" value="Textbook"> Textbook</option>
+      <option name="category" value="Other"> Other</option>
+    </select>
+
+     Pranavi had it like this before, with radio buttons.
+    I changed to select drop down, just maintaining previous in case we need it:
+-->
+    Category:
+    <input type="radio" name="category" value="Furniture"> Furniture
+    <input type="radio" name="category" value="Sublease"> Sublease
+    <input type="radio" name="category" value="Textbook"> Textbook
+    <input type="radio" name="category" value="Tutoring"> Tutoring
+    <input type="radio" name="category" value="Clothing"> Clothing
+    <input type="radio" name="category" value="Other"> Other
+
+
+
+    <br>
+    Price: ($)<input name = "price" type="text" id="price"></input>
+    <br>
+    Description: <input name = "description" type="text" id="description"></input>
+    <br>
+    Phone Number: <input name = "phonenumber" type="text" id="phonenumber"></input>
+    <br>
+    Upload img link here: <input name = "imagelink" type="text" id="pic"></input>
+    <br>
+    <button type=submit >Submit</button>
+ </form>
+
+</body>
+
+</html>

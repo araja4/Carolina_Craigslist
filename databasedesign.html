@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database Design and Server Side API</title>
+</head>
+
+<body>
+  <h3>Database Schema</h3>
+  <pre>
+Categories
+	CategoryID : INT, primary key
+	CategoryName : VARCHAR(30), name of Category e.g.('Furniture', 'Sublease', 'Clothes', 'Textbooks', 'Tutoring', 'Other')
+
+Posts
+	PostID : INT, primary key
+    Title : VARCHAR(30), title of post
+	  Description : VARCHAR(30), description of item being sold
+	  Price : INT, price of item being sold
+    PhoneNumber : VARCHAR(30), Phone number to contact person selling item
+    Picture : VARCHAR(30), url to picture of item being sold
+    CategoryID : INT, foreign key to categories table, indicates which category the item is in
+    UserID : INT, foreign key to user table, indicates which user the post belongs to
+
+Users
+	UserID : INT, primary key
+	Username : VARCHAR(30), username of person selling item
+    Password : VARCHAR(30), password of person selling item
+
+    <h3>Here is our server-side API: </h3>
+
+    <strong>Users:</strong>
+    POST /users.php
+    <ul>
+      <li>Creates new User item from information provided as parameters, which are Username and Password</li>
+      <li>Result is JSON encoding of new User item as
+        {"UserID": &lt;integer&gt;,
+        "Username":&lt;string&gt;,
+        "Password":&lt;string&gt;}
+      </li>
+    </ul>
+
+    GET /users.php
+    <ul>
+      <li>Gets User item using information provided as parameters, which are Username and Password</li>
+      <li>Result is either true or false if Username and Password match with what is in the database</li>
+  </ul>
+
+  <strong>Posts:</strong>
+  POST /posts.php
+  <ul>
+    <li>Creates new Post item from information provided as parameters, which are Title, Description, Price, PhoneNumber, Picture, and  CategoryID</li>
+    <li>Result is JSON encoding of new Post item as
+    {"PostID":&lt;integer&gt;,
+    "Title":&lt;string&gt;,
+    "Description":&lt;string&gt;,
+    "Price":&lt;integer&gt;,
+    "PhoneNumber":&lt;string&gt;,
+    "Picture":&lt;string&gt;,
+    "CategoryID":&lt;integer&gt;}
+    </li>
+  </ul>
+
+  GET /posts.php
+  <ul>
+    <li>Gets Post item using information provided as parameters, which can be either Category or Username</li>
+    <li>Returns JSON representation of Post (see JSON object above) item with Category value matching Category in database or Username matching Username in database</li>
+  </ul>
+
+  GET /posts.php/&lt;id&gt;
+  <ul>
+    <li>Gets Post item using id passed through</li>
+    <li>Returns JSON representation of Post (see JSON object above) item with the id matching id in database</li>
+  </ul>
+
+  </pre>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+ <!doctype html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>View Post</title>
+    </head>
+    <body>
+      <?php
+     $host = "classroom.cs.unc.edu";
+$username = "psanka";
+$password = "random123";
+
+$connector = mysql_connect($host,$username,$password)
+          or die("Unable to connect");
+        echo "Connections are made successfully::";
+
+
+ $selected = mysql_select_db("psankadb", $connector)
+        or die("Unable to connect");
+
+      $result = mysql_query("SELECT * FROM Posts where PostID =7 ");
+      ?>
+      <table border="2" style= "background-color: #84ed86; color: #761a9b; margin: 0 auto;" >
+      <thead>
+        <tr>
+          <th>Employee_id</th>
+          <th>Employee_Name</th>
+          <th>Employee_dob</th>
+          <th>Employee_Adress</th>
+          <th>Employee_dept</th>
+          <td>Employee_salary</td>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+          while( $row = mysql_fetch_assoc( $result ) ){
+            echo
+            "<tr>
+              <td>{$row\['Title'\]}</td>
+              <td>{$row\['Description'\]}</td>
+              <td>{$row\['Price'\]}</td>
+              <td>{$row\['PhoneNumber'\]}</td>
+              <td>{$row\['Picture'\]}</td>
+              <td>{$row\['CategoryID'\]}</td> 
+            </tr>\n";
+          }
+        ?>
+      </tbody>
+    </table>
+    </body>
+    </html>
